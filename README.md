@@ -8,8 +8,8 @@ interferometric models.
 Install `pyGrater` first, then install this package in editable mode:
 
 ```bash
-python -m pip install -e /Users/prioletp/PhD/public_codes/pyGrater
-python -m pip install -e /Users/prioletp/PhD/public_codes/fitters_for_pyGrater
+python -m pip install -e /pyGrater
+python -m pip install -e /fitters_for_pyGrater
 ```
 
 ## Package layout
@@ -43,8 +43,7 @@ fitters_for_pyGrater/
 ```
 
 `multi_component` means any combination of multiple rings and/or multiple
-compositions. The old module paths remain as package-level compatibility
-imports, but new scripts should use the paths above.
+compositions. 
 
 ## Main Fitters
 
