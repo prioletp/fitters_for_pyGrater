@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fitters_for_pyGrater"
+version = "0.1.0"
+description = "Optimized SciPy, MCMC, nested-sampling, and interferometric fitters for pyGrater"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "P. Priolet", email = "philippe.priolet@univ-grenoble-alpes.fr"},
+]
+dependencies = [
+    "pyGrater>=0.1.0",
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "matplotlib>=3.4",
+    "emcee>=3.1",
+    "corner>=2.2",
+    "h5py>=3.7",
+    "dynesty>=2.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "jupyter", "nbconvert"]
+
+[project.scripts]
+pygrater-plot-mcmc = "fitters_for_pyGrater.utils.mcmc_plotting:main"
+pygrater-plot-all-mcmc = "fitters_for_pyGrater.utils.mcmc_batch_plotting:main"
+pygrater-plot-nested = "fitters_for_pyGrater.utils.nested_plotting:main"
+pygrater-recover-backend = "fitters_for_pyGrater.utils.emcee_backend_recovery:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fitters_for_pyGrater*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
